@@ -1,4 +1,4 @@
-package _05_herencia;
+package _05_static;
 
 public class Animal {
 	private long id;

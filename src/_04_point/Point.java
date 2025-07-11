@@ -94,7 +94,7 @@ public class Point {
 					numerosEnY--;
 					for (int j = 0; j <= longitudX; j++) {
 						if(j < longitudX) {
-							if(j == x) {
+							if(j == x && longitudX == y) {
 								System.out.print("\033[31m" + symbol);
 								System.out.print("\033[37m" +  "--");
 							}else {
