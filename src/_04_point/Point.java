@@ -28,7 +28,7 @@ public class Point {
 	
 	public Point (byte x, byte y, String colour, char symbol) {
 		this.x = x < 0 ? 0 : x >= 12 ? 12 : x;
-		this.y = y < 0 ? 0 : x >= 7 ? 7 : y;
+		this.y = y < 0 ? 0 : y >= 7 ? 7 : y;
 		this.colour = colour.equalsIgnoreCase("black") || colour.equalsIgnoreCase("red") || 
 					  colour.equalsIgnoreCase("green") || colour.equalsIgnoreCase("yellow") ||
 					  colour.equalsIgnoreCase("blue") || colour.equalsIgnoreCase("purple") 
@@ -78,13 +78,103 @@ public class Point {
 		return desplazamientoIzquierda;
 	}
 	
+	private String getColor(String color) {
+		switch (color) {
+		case "red":
+			return red;
+		case "green":
+			return green;
+		case "yellow":
+			return yellow;
+		case "blue":
+			return blue;
+		case "purple":
+			return purple;
+
+		default:
+			return black;
+		}
+	}
+	
 	public void show () {
+		
 		int longitudX = 12;
+		int longitudY = 7;
+		
+		System.out.println();
+				for (int i = longitudY; i >= 0; i--) {
+					System.out.print(i + " ");
+					for (int j = 0; j <= longitudX; j++) {
+						if(x == j && y == i) {
+							if(j < longitudX) {
+								System.out.print(getColor(colour) + symbol + "\033[37m" + "--");
+							}else {
+								System.out.print(getColor(colour) + symbol + "\033[37m");
+							}
+						}else {
+							if(j < longitudX) {
+								System.out.print("\033[37m" + "+--");
+							}else {
+								System.out.print("\033[37m" + "+");
+							}
+						}
+						
+					}
+					
+					System.out.println();
+					if(i != 0) {
+						System.out.print(" ");
+						for (int j = 0; j <= longitudX; j++) {
+							System.out.print(" | ");
+						}
+						System.out.println();
+						
+					}
+					
+			}
+		
+		for (int i = 0; i <= longitudX; i++) {
+			if(i == 0) {
+				System.out.print("  " + i + "  ");
+			}else if(i <= 9) {
+				System.out.print(i + "  ");
+			}else {
+				System.out.print(i + " ");
+			}
+		}
+		
+		System.out.println();
+		
+		
+		System.out.println("\n" + getColor(colour) + "Point " + symbol + " de color " + colour + " (" + x + "," + y + ")" + "\n" + "\033[37m");
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	/*	int longitudX = 12;
 		int longitudY = 7;
 		int numerosEnY = 7;
 		
-//		x = (byte)(x < 0 ? 0 : x > longitudX ? longitudX : x);
-//		y = (byte)(y < 0 ? 0 : x > longitudY ? longitudY : y);
+		x = (byte)(x < 0 ? 0 : x > longitudX ? longitudX : x);
+		y = (byte)(y < 0 ? 0 : x > longitudY ? longitudY : y);
 		
 		System.out.println();
 		
@@ -124,6 +214,6 @@ public class Point {
 			}else {
 				System.out.print(i + " ");
 			}
-		}
+		}*/
 	}
 }

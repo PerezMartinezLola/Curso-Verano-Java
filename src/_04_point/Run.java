@@ -4,6 +4,7 @@ public class Run {
 	public static void main(String[] args) {
 		Point p1 = new Point((byte) 8, (byte) 6, "yellow", '&');
 		Point p2 = new Point((byte) 9, (byte) 2, "red", '?');
+		Point p3 = new Point((byte) 14, (byte)8, "blue", '#');
 		
 		
 //		System.out.printf("Point p1");
@@ -67,8 +68,9 @@ public class Run {
 		System.out.println();
 		p1.show();
 		
-		System.out.println();
 		p2.show();
+		
+		p3.show();
 		
 		
 	}
