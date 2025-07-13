@@ -1,4 +1,4 @@
-package _06_herencia;
+package _08_herencia;
 
 public class PerroMejorado extends AnimalMejorado{
 	

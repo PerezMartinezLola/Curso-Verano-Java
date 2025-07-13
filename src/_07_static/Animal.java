@@ -1,4 +1,4 @@
-package _05_static;
+package _07_static;
 
 public class Animal {
 	private long id;
