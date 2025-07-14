@@ -14,8 +14,8 @@ public enum Color {
 	public String getColor() {
 		return color;
 	}
-
-
+	
+//	Este método no tiene uso con los enum
 	public static Color colorValido(Color color) {
 		for (Color c : Color.values()) {
 			if(c == color) {

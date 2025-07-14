@@ -5,19 +5,16 @@ public abstract class Figura {
 	
 	
 	public Figura(Color color) {
-		if(color == null) {
-			this.color = Color.NE;
-		}else {
-			this.color = Color.colorValido(color);
-		}
+		this.color = color == null ? Color.NE : color;		
 	}
+	
 
 	public abstract double perimetro();
 	
 	public abstract double area ();
 	
-	public boolean compararAreas(Figura f2) {
-		return this.area() == f2.area();
+	public boolean compararAreas(Figura f) {
+		return this.area() == f.area();
 	}
 
 	@Override

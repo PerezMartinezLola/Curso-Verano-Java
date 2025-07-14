@@ -34,7 +34,7 @@ public class Circulo extends Figura {
 
 	@Override
 	public String toString() {
-		return "Circulo [radio= " + radio + "]";
+		return "Circulo [radio= " + radio +	"," + super.toString() + "]";
 	}
 
 }

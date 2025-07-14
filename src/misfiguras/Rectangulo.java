@@ -37,7 +37,7 @@ public class Rectangulo extends Figura {
 
 	@Override
 	public String toString() {
-		return "Rectangulo [base= " + base + ", altura= " + altura + "]";
+		return "Rectangulo [base= " + base + ", altura= " + altura + "," + super.toString() + "]";
 		
 	}
 
