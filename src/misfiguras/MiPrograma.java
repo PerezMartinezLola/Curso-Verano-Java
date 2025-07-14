@@ -58,7 +58,7 @@ public class MiPrograma {
 				contadorCuadrados++;
 			}
 		}
-		double mediaPerimetrosCuadrados = sumaPerimetrosCuadrados / contadorCuadrados;
+		double mediaPerimetrosCuadrados = (double) sumaPerimetrosCuadrados / contadorCuadrados;
 		
 		for (Figura figura : figuras) {
 			if((figura instanceof Cuadrado)){
@@ -82,14 +82,149 @@ public class MiPrograma {
 				contadorRectangulos++;
 			}
 		}
-		double mediaPerimetrosRectangulos = sumaPerimetrosRectangulos / contadorRectangulos;
+		double mediaPerimetrosRectangulos = (double) sumaPerimetrosRectangulos / contadorRectangulos;
 		
 		for (Figura figura : figuras) {
-			if((figura instanceof Cuadrado)){
+			if((figura instanceof Rectangulo)){
 				if(figura.perimetro() > mediaPerimetrosRectangulos) {
 					System.out.println(figura.toString());
 				}
 			}
+		}
+		
+//		d. Obtener un listado de de los círculos que tienen un valor de perímetro mayor que la media.
+		System.out.printf("%nListado de los circulos que tienen un valor de perímetro mayor que la media.");
+		System.out.printf("%n-----------------------------------------------------------------------------%n");
+		int sumaPerimetrosCirculos = 0;
+		int contadorCirculos = 0;
+		
+		
+		for (Figura figura : figuras) {
+			if((figura instanceof Circulo)){
+				sumaPerimetrosCirculos += figura.perimetro();
+				contadorCirculos++;
+			}
+		}
+		double mediaPerimetrosCirculos = (double) sumaPerimetrosCirculos / contadorCirculos;
+		
+		for (Figura figura : figuras) {
+			if((figura instanceof Circulo)){
+				if(figura.perimetro() > mediaPerimetrosCirculos) {
+					System.out.println(figura.toString());
+				}
+			}
+		}
+		
+		
+//		e. Obtener un listado de de los cuadrados que tienen un valor de área mayor que la media.
+		System.out.printf("%nListado de los cuadrados que tienen un valor de area mayor que la media.");
+		System.out.printf("%n-------------------------------------------------------------------------%n");
+		int sumaAreasCuadrados = 0;
+		contadorCuadrados = 0;
+		
+		
+		for (Figura figura : figuras) {
+			if((figura instanceof Cuadrado)){
+				sumaAreasCuadrados += figura.perimetro();
+				contadorCuadrados++;
+			}
+		}
+		double mediaAreasCuadrados = (double) sumaAreasCuadrados / contadorCuadrados;
+		
+		for (Figura figura : figuras) {
+			if((figura instanceof Cuadrado)){
+				if(figura.perimetro() > mediaAreasCuadrados) {
+					System.out.println(figura.toString());
+				}
+			}
+		}
+		
+//		f. Obtener un listado de de los rectángulos que tienen un valor de área mayor que la media.
+		System.out.printf("%nListado de los rectángulos que tienen un valor de área mayor que la media.");
+		System.out.printf("%n-------------------------------------------------------------------------------%n");
+
+		int sumaAreasRectangulos = 0;
+		contadorRectangulos = 0;
+
+		for (Figura figura : figuras) {
+		    if (figura instanceof Rectangulo) {
+		        sumaAreasRectangulos += figura.area();
+		        contadorRectangulos++;
+		    }
+		}
+
+		double mediaAreasRectangulos = (double) sumaAreasRectangulos / contadorRectangulos;
+
+		for (Figura figura : figuras) {
+		    if (figura instanceof Rectangulo) {
+		        if (figura.area() > mediaAreasRectangulos) {
+		            System.out.println(figura.toString());
+		        }
+		    }
+		}
+		
+//		g. Obtener un listado de de los círculos que tienen un valor de área mayor que la media.
+		System.out.printf("%nListado de los círculos que tienen un valor de área mayor que la media.");
+		System.out.printf("%n------------------------------------------------------------------------%n");
+
+		int sumaAreasCirculos = 0;
+		contadorCirculos = 0;
+
+		for (Figura figura : figuras) {
+		    if (figura instanceof Circulo) {
+		        sumaAreasCirculos += figura.area();
+		        contadorCirculos++;
+		    }
+		}
+
+		double mediaAreasCirculos = (double) sumaAreasCirculos / contadorCirculos;
+
+		for (Figura figura : figuras) {
+		    if (figura instanceof Circulo) {
+		        if (figura.area() > mediaAreasCirculos) {
+		            System.out.println(figura.toString());
+		        }
+		    }
+		}
+		
+//		h. Obtener un listado de las figuras que tienen un valor de perímetro mayor que la media.
+		System.out.printf("%nListado de las figuras que tienen un valor de perímetro mayor que la media.");
+		System.out.printf("%n-------------------------------------------------------------------------%n");
+
+		int sumaPerimetrosFiguras = 0;
+		int contadorFiguras = 0;
+
+		for (Figura figura : figuras) {
+		    sumaPerimetrosFiguras += figura.perimetro();
+		    contadorFiguras++;
+		}
+
+		double mediaPerimetrosFiguras = (double) sumaPerimetrosFiguras / contadorFiguras;
+
+		for (Figura figura : figuras) {
+		    if (figura.perimetro() > mediaPerimetrosFiguras) {
+		        System.out.println(figura.toString());
+		    }
+		}
+		
+//		i. Obtener un listado de las figuras que tienen un valor de área mayor que la media.
+		System.out.printf("%nListado de las figuras que tienen un valor de área mayor que la media.");
+		System.out.printf("%n-----------------------------------------------------------------------%n");
+
+		int sumaAreasFiguras = 0;
+		contadorFiguras = 0;
+
+		for (Figura figura : figuras) {
+		    sumaAreasFiguras += figura.area();
+		    contadorFiguras++;
+		}
+
+		double mediaAreasFiguras = (double) sumaAreasFiguras / contadorFiguras;
+
+		for (Figura figura : figuras) {
+		    if (figura.area() > mediaAreasFiguras) {
+		        System.out.println(figura.toString());
+		    }
 		}
 	}
 
