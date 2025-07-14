@@ -58,11 +58,35 @@ public class MiPrograma {
 				contadorCuadrados++;
 			}
 		}
-		double mediaPerimetros = sumaPerimetrosCuadrados / contadorCuadrados;
+		double mediaPerimetrosCuadrados = sumaPerimetrosCuadrados / contadorCuadrados;
 		
 		for (Figura figura : figuras) {
 			if((figura instanceof Cuadrado)){
-				if(figura.perimetro() > mediaPerimetros) {
+				if(figura.perimetro() > mediaPerimetrosCuadrados) {
+					System.out.println(figura.toString());
+				}
+			}
+		}
+		
+		
+//		c. Obtener un listado de de los rectángulos que tienen un valor de perímetro mayor que la media.
+		System.out.printf("%nListado de los rectángulos que tienen un valor de perímetro mayor que la media.");
+		System.out.printf("%n-------------------------------------------------------------------------------%n");
+		int sumaPerimetrosRectangulos = 0;
+		int contadorRectangulos = 0;
+		
+		
+		for (Figura figura : figuras) {
+			if((figura instanceof Rectangulo)){
+				sumaPerimetrosRectangulos += figura.perimetro();
+				contadorRectangulos++;
+			}
+		}
+		double mediaPerimetrosRectangulos = sumaPerimetrosRectangulos / contadorRectangulos;
+		
+		for (Figura figura : figuras) {
+			if((figura instanceof Cuadrado)){
+				if(figura.perimetro() > mediaPerimetrosRectangulos) {
 					System.out.println(figura.toString());
 				}
 			}
