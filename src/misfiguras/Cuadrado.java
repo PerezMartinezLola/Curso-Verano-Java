@@ -10,13 +10,13 @@ public class Cuadrado extends Figura{
 	
 	public Cuadrado(double area, Color color) {
 		super(color);
-		area = area < 0 ? 1 : area;
-		lado = (int) Math.sqrt(area);
+		area = valorMinimo((int) area);
+		lado = valorMinimo((int) Math.sqrt(area));
 	}
 	
 	public Cuadrado (int lado, Color color) {
 		super(color);
-		this.lado = lado < 0 ? 1 : lado;
+		this.lado = valorMinimo(lado);
 	}
 	
 	

@@ -15,15 +15,19 @@ public enum Color {
 		return color;
 	}
 	
-//	Este método no tiene uso con los enum
 	public static Color colorValido(Color color) {
-		for (Color c : Color.values()) {
-			if(c == color) {
-				return c;
-			}
-		}
-		return Color.NE;
+		 return color != null ? color : Color.NE;
 	}
+	
+//	Este método no tiene uso con los enum
+//	public static Color colorValido(Color color) {
+//		for (Color c : Color.values()) {
+//			if(c == color) {
+//				return c;
+//			}
+//		}
+//		return Color.NE;
+//	}
 	
 	public static Color [] coloresDisponibles () {
 		return Color.values();

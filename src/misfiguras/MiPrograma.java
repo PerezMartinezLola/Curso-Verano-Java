@@ -1,8 +1,9 @@
 package misfiguras;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class MiPrograma {
-	
-	
 
 	public static void main(String[] args) {
 		System.out.printf("Figuras");
@@ -44,6 +45,8 @@ public class MiPrograma {
 		for (Figura figura : figuras) {
 			System.out.println(figura.toString());
 		}
+		
+		
 		
 //		b. Obtener un listado de los cuadrados que tienen un valor de perímetro mayor que la media.
 		System.out.printf("%nListado de los cuadrados que tienen un valor de perímetro mayor que la media.");
@@ -141,7 +144,7 @@ public class MiPrograma {
 		
 //		f. Obtener un listado de de los rectángulos que tienen un valor de área mayor que la media.
 		System.out.printf("%nListado de los rectángulos que tienen un valor de área mayor que la media.");
-		System.out.printf("%n-------------------------------------------------------------------------------%n");
+		System.out.printf("%n--------------------------------------------------------------------------%n");
 
 		int sumaAreasRectangulos = 0;
 		contadorRectangulos = 0;
@@ -226,6 +229,8 @@ public class MiPrograma {
 		        System.out.println(figura.toString());
 		    }
 		}
+		
+		
 	}
 
 }

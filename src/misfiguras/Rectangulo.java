@@ -11,17 +11,16 @@ public class Rectangulo extends Figura {
 	
 	public Rectangulo(double area, Color color) {
 		super(color);
-		area = area < 0 ? 1 : area;
-		base = (int) area / 4;
-		base = base < 1 ? 1 : base;  
-		altura = base / 2;
-		altura = altura < 1 ? 1 : altura;
+		area = valorMinimo((int) area);
+//		base = (int) Math.sqrt(area * 2); 
+		altura = valorMinimo((int) Math.sqrt(area / 2));
+		base = 2* altura;
 	}
 	
 	public Rectangulo(int base, int altura, Color color) {
 		super(color);
-		this.base = base < 0 ? 1 : base;
-		this.altura = altura < 0 ? 1 : altura;
+		this.base = valorMinimo(base);
+		this.altura = valorMinimo(altura);
 	}
 
 

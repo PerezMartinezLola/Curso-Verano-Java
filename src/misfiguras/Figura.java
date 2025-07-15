@@ -5,21 +5,25 @@ public abstract class Figura {
 	
 	
 	public Figura(Color color) {
-		this.color = color == null ? Color.NE : color;		
+		this.color = Color.colorValido(color);		
 	}
-	
 
 	public abstract double perimetro();
 	
 	public abstract double area ();
 	
 	public boolean compararAreas(Figura f) {
-		return this.area() == f.area();
+		return f != null && this.area() == f.area();
 	}
-
+	
+	public static int valorMinimo(int valor) {
+	    return valor < 1 ? 1 : valor;
+	}
+	
 	@Override
 	public String toString() {
-		return " color= " + color.getColor();
+		return " color= " + color.getColor() + "," + String.format(" perimetro= %.3f", perimetro()) + 
+				"," + String.format(" area= %.3f", area());
 	}
 	
 	
