@@ -32,11 +32,6 @@ public class Revista extends Publicacion{
 		
 	}
 	
-//	@Override
-//	public void leePagina(boolean silenciosamente) {
-//		if(get)
-//	}
-	
 	
 	
 	

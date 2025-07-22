@@ -4,20 +4,27 @@ public abstract class Publicacion implements CanRead {
 	private String titulo;
 	private int numPags;
 	private int pagActual;
+	private int pagInicial;
 	private boolean formatoDigital;
 	private double precio;
 	private int id;
 	private boolean leido;
 	private static int nextId = 1;
-
+	
 	public Publicacion(String titulo, int numPags, boolean formatoDigital, double precio) {
-		this.titulo = titulo == null ? "Autor desconocido" : titulo;
+		this(titulo, numPags, numPags, formatoDigital, precio);
+	}
+
+	public Publicacion(String titulo, int numPags, int pagInicial, boolean formatoDigital, double precio) {
+		this.titulo = titulo == null ? "Titulo desconocido" : titulo;
 		this.numPags = numPags <= 0 ? 1 : numPags;
-		pagActual = 1;
 		this.formatoDigital = formatoDigital;
-		this.precio = precio <= 0 ? 1 : precio;
+		this.precio = precio <= 0 ? 2 : precio;
+		this.pagInicial = pagInicial <= 0 ? 1 : pagInicial;
+		this.pagActual = this.pagInicial;
 		id = nextId++;
 	}
+
 
 	@Override
 	public String toString() {
@@ -55,6 +62,14 @@ public abstract class Publicacion implements CanRead {
 		return id;
 	}
 
+	public int getPagInicial() {
+		return pagInicial;
+	}
+	
+	public double getPrecio() {
+		return precio;
+	}
+
 
 	public void leePagina(boolean silenciosamente) {
 		if(silenciosamente) {
@@ -75,9 +90,8 @@ public abstract class Publicacion implements CanRead {
 		}else {
 			System.out.println("%nNo se leyó silenciosamente.%n");
 		}
-
-
 	}
+	
 	
 	public abstract void finalizado();
 	public abstract void paginaLeida();

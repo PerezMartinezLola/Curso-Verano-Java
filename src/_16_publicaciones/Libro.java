@@ -2,22 +2,14 @@ package _16_publicaciones;
 
 public class Libro extends Publicacion{
 	private String autor;
-	private int pagInicial;
 	private static String mensajeCabecera = "\nDATOS LIBRO\n===========\n";
 	
 	
 	public Libro(String titulo, String autor, int numPags, int pagInicial, boolean formatoDigital, double precio) {
-		super(titulo, numPags, formatoDigital, precio);
-		this.autor = autor == null ? "Autor desconocido" : autor;
-		this.pagInicial = pagInicial;
-		
+		super(titulo, numPags, pagInicial, formatoDigital, precio);
+		this.autor = autor == null ? "Autor desconocido" : autor;	
 	}
 	
-
-	public int getPagInicial() {
-		return pagInicial;
-	}
-
 
 	@Override
 	public String toString() {
@@ -26,10 +18,9 @@ public class Libro extends Publicacion{
 	
 	@Override
 	public void show () {
-		pagInicial = getPagActual();
 		System.out.print(mensajeCabecera);
 		super.show();
-		System.out.printf("Autor: %s%nPágina Inicial: %d%n", autor, pagInicial);
+		System.out.printf("Autor: %s%nPágina Inicial: %d%n", autor, getPagInicial());
 	}
 	
 	@Override
