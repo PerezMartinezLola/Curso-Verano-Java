@@ -1,5 +1,6 @@
 package _16_publicaciones;
 
+import java.lang.reflect.Array;
 import java.util.Iterator;
 
 public class Test {
@@ -9,7 +10,20 @@ public class Test {
 		System.out.printf("-".repeat(enunciado.length()));
 		System.out.println();
 	}
-	
+	private static void listaTitID (Publicacion [] publicaciones) {
+		for (int i = 0; i < publicaciones.length; i++) {
+			 System.out.printf("Publicación con título: %s. ID: %d%n",publicaciones [i].getTitulo(), publicaciones [i].getId());	
+		}
+	}
+//	private static Array [] tituloId (Publicacion [] publicaciones, boolean Libro) {
+//		for (int i = 0; i < publicaciones.length; i++) {
+//			if(publicaciones[i] instanceof Libro) {
+//				 System.out.printf("Publicación con título: %s. ID: %d%n",publicaciones [i].getTitulo(), publicaciones [i].getId());
+//			}else if()
+//			
+//		}
+//		return null;
+//	}
 	
 public static void main(String[] args) {
 	
@@ -72,6 +86,18 @@ public static void main(String[] args) {
 		System.out.printf("%s%n", publicaciones [i]);
 		
 	}
-
+	 
+	 subrayado("a. Todas las publicaciones del array publicaciones con título y ID.");
+	 listaTitID(publicaciones);
+		
+	 
+	 subrayado("b. Solo libros del array publicaciones con ID y  título (usar instanceof para discriminar).");
+	 for (int i = 0; i < publicaciones.length; i++) {
+		if(publicaciones[i] instanceof Libro) {
+			 System.out.printf("Publicación con título: %s. ID: %d%n",publicaciones [i].getTitulo(), publicaciones [i].getId());
+		}
+	}
+	 
+	 
 }
 }

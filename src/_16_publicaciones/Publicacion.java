@@ -50,6 +50,11 @@ public abstract class Publicacion implements CanRead {
 	public String getTitulo() {
 		return titulo;
 	}
+	
+	public int getId() {
+		return id;
+	}
+
 
 	public void leePagina(boolean silenciosamente) {
 		if(silenciosamente) {
